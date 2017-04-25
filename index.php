@@ -11,7 +11,19 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo 'Hola Mundo';
+        $miconexion = new mysqli("localhost", "root", "avaras08", "datospersonales");
+        if ($miconexion->connect_errno) {
+            echo "Failed to connect to MySQL: (" . $miconexion->connect_errno . ") " . $miconexion->connect_error;
+        }
+        echo $miconexion->host_info . "\n";
+
+        /* Consultas de selección que devuelven un conjunto de resultados */
+        if ($resultado = $miconexion->query("SELECT * FROM persona")) {
+            printf("La selección devolvió %d filas.\n", $resultado->num_rows);
+
+            /* liberar el conjunto de resultados */
+            $resultado->close();
+        }
         ?>
     </body>
 </html>
