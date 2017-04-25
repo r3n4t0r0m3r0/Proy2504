@@ -16,6 +16,7 @@ and open the template in the editor.
             echo "Failed to connect to MySQL: (" . $miconexion->connect_errno . ") " . $miconexion->connect_error;
         }
         echo $miconexion->host_info . "\n";
+        echo "<br>";
 
         /* Consultas de selección que devuelven un conjunto de resultados */
         if ($resultado = $miconexion->query("SELECT * FROM persona")) {
