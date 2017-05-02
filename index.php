@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        $miconexion = new mysqli("localhost", "root", "avaras08", "datospersonales");
+        $miconexion = new mysqli("10.20.26.58", "root", "avaras08", "datospersonales");
         if ($miconexion->connect_errno) {
             echo "Failed to connect to MySQL: (" . $miconexion->connect_errno . ") " . $miconexion->connect_error;
         }
